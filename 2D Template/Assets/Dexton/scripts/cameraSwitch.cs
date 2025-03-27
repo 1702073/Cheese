@@ -6,6 +6,7 @@ public class cameraSwitch : MonoBehaviour
     public GameObject cam1, cam2, cam3, flicker;
     void Update()
     {
+        {
         if (Input.GetKeyDown("1"))
             CameraOne();
 
@@ -14,13 +15,13 @@ public class cameraSwitch : MonoBehaviour
 
         if (Input.GetKeyDown("3"))
             CameraThree();
+        }
     }
     public void CameraFlicker()
     {
         flicker.SetActive(true);
     }
-
-    {
+        
     void CameraOne()
     {
         CameraFlicker();
@@ -41,6 +42,5 @@ public class cameraSwitch : MonoBehaviour
         cam1.SetActive(false);
         cam2.SetActive(false);
         cam3.SetActive(true);
-    }
     }
 }
