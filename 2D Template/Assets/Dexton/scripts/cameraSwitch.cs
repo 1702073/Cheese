@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class cameraSwitch : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class cameraSwitch : MonoBehaviour
         if (Input.GetKeyDown("3"))
             CameraThree();
         }
+        Mouse.current.WarpCursorPosition(Vector2.right);
     }
     public void CameraFlicker()
     {
