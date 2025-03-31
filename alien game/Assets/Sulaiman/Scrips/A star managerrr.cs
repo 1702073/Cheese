@@ -36,14 +36,40 @@ public class Astarmanagerrr : MonoBehaviour
                 }
             }
 
-            Node current = openSet[lowestF];
-            openSet.Remove(current);
+            Node currentNode = openSet[lowestF];
+            openSet.Remove(currentNode);
 
-            if (current == end)
+            if (currentNode == end)
             {
                 List<Node> path = new List<Node>();
 
                 path.Insert(0, end);
+
+                while(currentNode != start)
+                {
+                    currentNode = currentNode.cameFrom;
+                    path.Add(currentNode);
+                }
+
+                path.Reverse();
+                return path;
+            }
+
+            foreach(Node connectedNode in currentNode.connections)
+            {
+                float heldGscore = currentNode.gScore + Vector2.Distance(currentNode.transform.position, connectedNode.transform.position);
+
+                if(heldGscore < connectedNode.gScore)
+                {
+                    connectedNode.cameFrom = currentNode;
+                    connectedNode.gScore = heldGscore;
+                    connectedNode.hScore = Vector2.Distance(connectedNode.transform.position, end.transform.position);
+
+                    if (!openSet.Contains(connectedNode))
+                    {
+                        openSet.Add(connectedNode);
+                    }
+                }
             }
         }
 
