@@ -6,7 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Dexton/Scenes/Title Scene.unity
+    guid: 7fc970d769348984c9b6cb71cb7f81fc
+  - enabled: 1
     path: Assets/Dexton/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/John/Scenes/build 1.unity
+    guid: 73d38a7b3cb3ee542a00830c11f48488
+  - enabled: 1
+    path: Assets/Sulaiman/Scenes/Best Scene.unity
+    guid: d4523b363fbd6814ab8e8fc6402f7aa4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
