@@ -17,5 +17,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sulaiman/Scenes/Best Scene.unity
     guid: d4523b363fbd6814ab8e8fc6402f7aa4
+  - enabled: 1
+    path: Assets/Dexton/Scenes/Credit/Credit scene.unity
+    guid: ef9976abe387f3b46b052d032ad4ffb9
+  - enabled: 1
+    path: Assets/Sulaiman/Scenes/Credit Sulaiman.unity
+    guid: 10fd8d784c0c15e4aa1ca48807336768
+  - enabled: 1
+    path: Assets/John/Scenes/Credit John.unity
+    guid: f3a0db1e4e23b0e428c12290ce67bf6a
+  - enabled: 1
+    path: Assets/Dexton/Scenes/Credit/Credit Jake.unity
+    guid: 1f2e63d5a25ae4e47bd15e71804f9a0d
+  - enabled: 1
+    path: Assets/Dexton/Scenes/Credit/Best Credit.unity
+    guid: 8350aa212731606458eef02f24ae2f3f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
