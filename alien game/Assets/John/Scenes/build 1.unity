@@ -660,7 +660,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.589
   m_Pitch: 1.05
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -946,15 +946,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllSounds:
   - Type: 0
-    Clip: {fileID: 8300000, guid: c172ae21269ee6e4bb25c12d83286dc7, type: 3}
+    Clip: {fileID: 8300000, guid: 6c15a7f02b3b29549afbfa4845d03855, type: 3}
     Volume: 0.847
     Source: {fileID: 0}
   - Type: 0
-    Clip: {fileID: 8300000, guid: c172ae21269ee6e4bb25c12d83286dc7, type: 3}
+    Clip: {fileID: 8300000, guid: 6c15a7f02b3b29549afbfa4845d03855, type: 3}
     Volume: 0.927
     Source: {fileID: 0}
   - Type: 0
-    Clip: {fileID: 8300000, guid: c172ae21269ee6e4bb25c12d83286dc7, type: 3}
+    Clip: {fileID: 8300000, guid: 6c15a7f02b3b29549afbfa4845d03855, type: 3}
     Volume: 0.983
     Source: {fileID: 0}
 --- !u!4 &2058690990
