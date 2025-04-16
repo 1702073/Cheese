@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class cameraSwitch : MonoBehaviour
 {
-    public GameObject cam1, cam2, cam3, flicker;
+    public GameObject cam1, cam2, cam3, cam4, flicker;
     void Update()
     {
         if (Input.GetKeyDown("1"))
@@ -27,6 +27,7 @@ public class cameraSwitch : MonoBehaviour
         cam1.SetActive(true);
         cam2.SetActive(false);
         cam3.SetActive(false);
+        cam4.SetActive(false);
     }
     void CameraTwo()
     {
@@ -34,6 +35,7 @@ public class cameraSwitch : MonoBehaviour
         cam1.SetActive(false);
         cam2.SetActive(true);
         cam3.SetActive(false);
+        cam4.SetActive(false);
     }
     void CameraThree()
     {
@@ -41,5 +43,15 @@ public class cameraSwitch : MonoBehaviour
         cam1.SetActive(false);
         cam2.SetActive(false);
         cam3.SetActive(true);
+        cam4.SetActive(false);
     }
+    public void CameraFour()
+    {
+        cam1.SetActive(false);
+        cam2.SetActive(false);
+        cam3.SetActive(false);
+        cam4.SetActive(true);
+    }
+
+
 }
