@@ -15,6 +15,9 @@ public class cameraSwitch : MonoBehaviour
 
         if (Input.GetKeyDown("3"))
             CameraThree();
+
+        if (Input.GetKeyDown("4"))
+            CameraFour();
     }
     public void CameraFlicker()
     {
@@ -47,6 +50,7 @@ public class cameraSwitch : MonoBehaviour
     }
     public void CameraFour()
     {
+        CameraFlicker();
         cam1.SetActive(false);
         cam2.SetActive(false);
         cam3.SetActive(false);
