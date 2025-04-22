@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    public enum NPState { Idle, FollowPlayer, PickedUp, Dropped }
+    public enum NPState { Idle, PickedUp, Dropped }
 
     public NPState currentState = NPState.Idle;
     
