@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public GameObject dialoguePanel; // Assign the Panel in the inspector
-    public Text dialogueText; // Assign the Text element in the inspector
+    public TMP_Text dialogueText; // Assign the Text element in the inspector
     public List<string> dialogueMessages; // A list of dialogue messages
     public float displayDuration = 3f; // How long the dialogue is displayed
+    [TextArea]
+    private string[] dialogueWords;
 
     private bool isDialogueActive = false;
 
