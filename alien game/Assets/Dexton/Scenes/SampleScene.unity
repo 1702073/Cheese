@@ -2011,7 +2011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1284933397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4466,7 +4466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1850578291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4596,9 +4596,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ab9a52a3167464e8dec2ec426af9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 879365547}
+  target: {x: 0, y: 0}
   speed: 400
   nextWaypointDistance: 3
+  minPosition: {x: -5, y: -5}
+  maxPosition: {x: 5, y: 5}
   npcGFX: {fileID: 1413969075}
 --- !u!1 &2075018092
 GameObject:
