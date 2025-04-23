@@ -29,7 +29,7 @@ public class NPCController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && currentState == NPState.Idle && Input.GetButtonDown("PickUp"))
+        if (other.CompareTag("Enemy") && currentState == NPState.Idle && Input.GetButtonDown("PickUp"))
         {
             currentState = NPState.PickedUp;
             // Additional logic: Set NPC as child of player, update position, etc.
