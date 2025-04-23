@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    
+    public System.Random randomTime = new();
+
     //UI References
     [SerializeField]
     private GameObject dialogueCanvas;
@@ -34,36 +35,35 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     private Sprite[] portrait;
 
-    private bool dialogueActivated;
     private int step;
 
     // Update is called once per frame
-    void Update()
+    public void Start()
     {
-
-
-
-        if (Input.GetButtonDown("Interact") && dialogueActivated == true)
-        {
-            if (step >= speaker.Length)
-            {
-                dialogueCanvas.SetActive(false);
-                step = 0;
-            }
-            else
-            {
-                dialogueCanvas.SetActive(true);
-                SpeakerText.text = speaker[step];
-                dialogueText.text = dialogueWords[step];
-                PortraitImage.sprite = portrait[step];
-                step += 1;
-            }
-            
-
-        }
+        dialogueCanvas.SetActive(false);
+        int time = randomTime.Next(1, 60);
+        Invoke("showDialogue", time);
     }
 
+    void Update()
+    {
+        
+    }
+
+    private void showDialogue()
+    {
+        dialogueCanvas.SetActive(true);
+        int index = randomTime.Next(0, speaker.Length);
+        SpeakerText.SetText(speaker[index]);
+        dialogueText.SetText(dialogueWords[index]);
+        PortraitImage.sprite = portrait[index];
 
 
-
+    }
+    public void HideDialogue()
+    {
+        dialogueCanvas.SetActive(false);
+        int time = randomTime.Next(1, 6);
+        Invoke("showDialogue", time);
+    }
 }
