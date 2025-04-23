@@ -1,6 +1,7 @@
 using UnityEngine;
 using Pathfinding;
 using UnityEngine.AI;
+using System.Collections;
 
 public class NpcAI : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class NpcAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    public float timer;
+    public float timerMax;
+
+    public float distanceToTarget;
+    public float distanceToStop;
+
+    public bool isMoving;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,13 +41,11 @@ public class NpcAI : MonoBehaviour
         if (seeker.IsDone())
         {
             seeker.StartPath(rb.position, target, OnPathComplete);
-            SetRandomTarget();
         }
-                    
     }
     void SetRandomTarget()
     {
-        Vector2 target = new Vector2(Random.Range(minPosition.x, maxPosition.x), Random.Range(minPosition.y, maxPosition.y));
+        target = new Vector2(Random.Range(minPosition.x, maxPosition.x), Random.Range(minPosition.y, maxPosition.y));
     }
 
     void OnPathComplete(Path p)
@@ -51,7 +57,6 @@ public class NpcAI : MonoBehaviour
         }
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -61,11 +66,12 @@ public class NpcAI : MonoBehaviour
         if(currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
+            SetRandomTarget();
             return;
         }else
-         { 
+        { 
             reachedEndOfPath = false;
-         }
+        }
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
         Vector2 force = (direction * speed * Time.deltaTime).normalized;
 
@@ -81,5 +87,4 @@ public class NpcAI : MonoBehaviour
         else if (force.x <= -0.01f)
             npcGFX.localScale = new Vector3(-1, 1, 1);
     }
-
 }
