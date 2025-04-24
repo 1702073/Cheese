@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Sulaiman/Scenes/Credit Sulaiman.unity
     guid: 10fd8d784c0c15e4aa1ca48807336768
   - enabled: 1
-    path: Assets/John/Scenes/Credit John.unity
+    path: Assets/John/Scenes/Credit scene/Credit John.unity
     guid: f3a0db1e4e23b0e428c12290ce67bf6a
   - enabled: 1
     path: Assets/Dexton/Scenes/Credit/Credit Jake.unity
