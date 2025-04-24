@@ -41,7 +41,7 @@ public class Dialogue : MonoBehaviour
     public void Start()
     {
         dialogueCanvas.SetActive(false);
-        int time = randomTime.Next(1, 60);
+        int time = randomTime.Next(30, 60);
         Invoke("showDialogue", time);
     }
 
@@ -63,7 +63,7 @@ public class Dialogue : MonoBehaviour
     public void HideDialogue()
     {
         dialogueCanvas.SetActive(false);
-        int time = randomTime.Next(1, 6);
+        int time = randomTime.Next(1, 60);
         Invoke("showDialogue", time);
     }
 }
