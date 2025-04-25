@@ -8499,11 +8499,11 @@ MonoBehaviour:
   dialogueText: {fileID: 1153945969}
   PortraitImage: {fileID: 4958865}
   speaker:
-  - sulaiman
-  - Dexton
+  - Zlogor
+  - Zlogor
   dialogueWords:
-  - hello
-  - Blablabla
+  - You will never stop us QUINN!
+  - I shall take over the ship and rule over the humans!
   portrait:
   - {fileID: -1102858024, guid: 8cdb437a416a0aa4582b6afd35542abf, type: 3}
   - {fileID: -1102858024, guid: 8cdb437a416a0aa4582b6afd35542abf, type: 3}
