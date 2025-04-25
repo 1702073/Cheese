@@ -5,8 +5,7 @@ public class AudioManager : MonoBehaviour
 {
     public enum SoundType
     {
-        CameraSwitch,   
-        AlienPickup,
+        CameraSwitch,
         Music_Menu,       
         // Add more sound types as needed
     }
