@@ -1,6 +1,5 @@
 using UnityEngine;
 using Pathfinding;
-using UnityEngine.AI;
 using System.Collections;
 
 public class NpcAI : MonoBehaviour
@@ -19,13 +18,8 @@ public class NpcAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    public float timer;
-    public float timerMax;
-
-    public float distanceToTarget;
-    public float distanceToStop;
-
-    public bool isMoving;
+    public float pauseDuration = 2f; // How long until npc will move after reaching the target
+    private bool isPaused = false; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +32,7 @@ public class NpcAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (seeker.IsDone() && ! isPaused)
         {
             seeker.StartPath(rb.position, target, OnPathComplete);
         }
@@ -60,13 +54,13 @@ public class NpcAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (path == null)
-            return;
+        if (path == null || isPaused)
+            return; // If theis no path than npc's wont move
 
         if(currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
-            SetRandomTarget();
+            StartCoroutine(PausedMovement()); 
             return;
         }else
         { 
@@ -86,5 +80,15 @@ public class NpcAI : MonoBehaviour
             npcGFX.localScale = new Vector3(1, 1, 1);
         else if (force.x <= -0.01f)
             npcGFX.localScale = new Vector3(-1, 1, 1);
+    }
+
+    IEnumerator PausedMovement()
+    {
+        isPaused = true;
+        rb.linearVelocity = Vector2.zero; // Halt
+        yield return new WaitForSeconds(pauseDuration);
+        SetRandomTarget();
+        isPaused = false;
+        InvokeRepeating("UpdatePath", 0f, .5f);
     }
 }
