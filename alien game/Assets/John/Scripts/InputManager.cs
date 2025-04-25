@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            AudioManager.Instance.Play(AudioManager.SoundType.AlienPickup);
+            AudioManager.Instance.Play(AudioManager.SoundType.Music_Menu);
         }
       
     }
