@@ -19,7 +19,7 @@ public class NpcAI : MonoBehaviour
     Rigidbody2D rb;
 
     public float pauseDuration = 2f; // How long until npc will move after reaching the target
-    private bool isPaused = false; 
+    private bool isPaused = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
