@@ -1,12 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 public class Draggable : MonoBehaviour
 {
+    [SerializeField]
+    public string Newtag = "Morbs";
     private bool dragging = false;
     private Vector3 offset;
 
-     void Update()
+    private void Start()
+    {
+        gameObject.tag = "Morbs";
+    }
+    void Update()
     {
         if (dragging)
         {
@@ -28,6 +35,13 @@ public class Draggable : MonoBehaviour
     {
         dragging = false;
     }
-
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision != null && collision.gameObject != null)
+        {
+            gameObject.tag = "Morbs ";
+            Debug.Log($"Tag changed for {collision.gameObject.name} to Morbs");
+        }
+       
+    }
 }
