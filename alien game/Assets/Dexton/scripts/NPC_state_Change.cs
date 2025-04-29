@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class NPC_state_Change : MonoBehaviour
 {
-    int[] honkshoua = { 1, 4, 3, 2, 6, 12};
+    public string[] race = { "Alien", "human" };
+    public string[] actionToPreform = { "Sabatoge", "human" };
 
 
 

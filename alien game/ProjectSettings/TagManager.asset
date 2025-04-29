@@ -8,6 +8,7 @@ TagManager:
   - Cam2
   - Enemy
   - CameraSwitch
+  - Morbs
   layers:
   - Default
   - TransparentFX

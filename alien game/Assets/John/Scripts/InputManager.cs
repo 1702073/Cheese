@@ -12,6 +12,5 @@ public class InputManager : MonoBehaviour
         {
             AudioManager.Instance.Play(AudioManager.SoundType.Music_Menu);
         }
-      
     }
 }
