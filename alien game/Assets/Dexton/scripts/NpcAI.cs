@@ -11,6 +11,8 @@ public class NpcAI : MonoBehaviour
 
     public Transform npcGFX;
 
+    
+
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -18,7 +20,7 @@ public class NpcAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    public float pauseDuration = 2f; // How long until npc will move after reaching the target
+    public double pauseDuration = Random.Range(0.2f, 2.5f); // How long until npc will move after reaching the target
     private bool isPaused = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -67,7 +69,7 @@ public class NpcAI : MonoBehaviour
             reachedEndOfPath = false;
         }
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
-        Vector2 force = (direction * speed * Time.deltaTime).normalized;
+        Vector2 force = (direction * speed * Time.deltaTime);
 
         rb.AddForce(force);
 
@@ -86,9 +88,17 @@ public class NpcAI : MonoBehaviour
     {
         isPaused = true;
         rb.linearVelocity = Vector2.zero; // Halt
-        yield return new WaitForSeconds(pauseDuration);
+        pauseDuration = Random.Range(0.2f, 2.5f); // Randomize the pause duration
+        yield return new WaitForSeconds((float)pauseDuration);
         SetRandomTarget();
         isPaused = false;
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(new Vector3((minPosition.x + maxPosition.x) / 2, (minPosition.y + maxPosition.y) / 2, 0), new Vector3(maxPosition.x - minPosition.x, maxPosition.y - minPosition.y, 0));
+    }
+
 }
