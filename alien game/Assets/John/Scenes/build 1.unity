@@ -1903,15 +1903,11 @@ MonoBehaviour:
   AllSounds:
   - Type: 0
     Clip: {fileID: 8300000, guid: 5752ccda39bc4a344af35ccfd8c8f0c8, type: 3}
-    Volume: 1
+    Volume: 4
     Source: {fileID: 0}
   - Type: 0
     Clip: {fileID: 8300000, guid: 5752ccda39bc4a344af35ccfd8c8f0c8, type: 3}
-    Volume: 1
-    Source: {fileID: 0}
-  - Type: 0
-    Clip: {fileID: 8300000, guid: 5752ccda39bc4a344af35ccfd8c8f0c8, type: 3}
-    Volume: 0.983
+    Volume: 5
     Source: {fileID: 0}
 --- !u!4 &2058690990
 Transform:
