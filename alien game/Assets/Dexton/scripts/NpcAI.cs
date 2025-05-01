@@ -20,12 +20,13 @@ public class NpcAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    public double pauseDuration = Random.Range(0.2f, 2.5f); // How long until npc will move after reaching the target
     private bool isPaused = false;
+    public double pauseDuration; // How long until npc will move after reaching the target
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        pauseDuration = Random.Range(0.2f, 2.5f);
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -97,7 +98,7 @@ public class NpcAI : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireCube(new Vector3((minPosition.x + maxPosition.x) / 2, (minPosition.y + maxPosition.y) / 2, 0), new Vector3(maxPosition.x - minPosition.x, maxPosition.y - minPosition.y, 0));
     }
 
