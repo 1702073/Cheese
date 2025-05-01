@@ -1,25 +1,49 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject spawnedEnemy; // Enemy prefab to spawn
-  public float timeToSpawn,spawnCountdown; // Timer for spawning
+    [SerializeField]
+    private GameObject enemy;
 
-    void Start()
+    private GameObject newEnemy;
+    private SpriteRenderer rend;
+    private int randomSpawnZone;
+    private float randomXposition, randomYposition;
+    private Vector3 spawnPosition;
+
+     void Start()
     {
-        spawnCountdown = timeToSpawn;
+        InvokeRepeating("SpawnNewEnemy", 0f, 2f);
     }
-
-    void Update()
+    private void SpawnNewEnemy()
     {
-        spawnCountdown -= Time.deltaTime;
-        if(spawnCountdown <= 0)
+        randomSpawnZone = Random.Range(0, 4);
+
+        switch (randomSpawnZone)
         {
-            spawnCountdown = timeToSpawn;
-            Instantiate(spawnedEnemy, transform.position, transform.rotation);
+            case 0:
+                randomXposition = Random.Range(-11f, -10f);
+                randomYposition = Random.Range(-8f, -8f);
+                break;
+            case 1:
+                randomXposition = Random.Range(-10f, 10f);
+                randomYposition = Random.Range(-7f, -8f);
+                break;
+            case 2:
+                randomXposition = Random.Range(10f, 11f);
+                randomYposition = Random.Range(-8f, 8f);
+                break;
+            case 3:
+                randomXposition = Random.Range(-10f, 10f);
+                randomYposition = Random.Range(7f, 8f);
+                break;
         }
+
+        spawnPosition = new Vector3(randomXposition, randomYposition, 0f);
+        newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+        rend = newEnemy.GetComponent<SpriteRenderer>();
+        rend.color = new Color(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2), 1f);
     }
 
-    // Function to spawn enemies
-   
 }
