@@ -2,16 +2,16 @@ using UnityEngine;
 using Pathfinding;
 using System.Collections;
 
-public class NpcMovement : MonoBehaviour
+public class AlienMovement : MonoBehaviour
 {
     public Vector2 target;
     public float speed = 200f, nextWaypointDistance = 3f;
 
-    [SerializeField]Vector2 minPosition, maxPosition;
+    [SerializeField] Vector2 minPosition, maxPosition;
 
     public Transform npcGFX;
 
-    
+    int coolDown = 0;
 
     Path path;
     int currentWaypoint = 0;
@@ -35,7 +35,7 @@ public class NpcMovement : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone() && ! isPaused)
+        if (seeker.IsDone() && !isPaused)
         {
             seeker.StartPath(rb.position, target, OnPathComplete);
         }
@@ -60,13 +60,14 @@ public class NpcMovement : MonoBehaviour
         if (path == null || isPaused)
             return; // If theis no path than npc's wont move
 
-        if(currentWaypoint >= path.vectorPath.Count)
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
-            StartCoroutine(PausedMovement()); 
+            StartCoroutine(PausedMovement());
             return;
-        }else
-        { 
+        }
+        else
+        {
             reachedEndOfPath = false;
         }
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
