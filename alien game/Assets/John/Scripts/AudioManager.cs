@@ -16,8 +16,8 @@ public class AudioManager : MonoBehaviour
         public SoundType Type;
         public AudioClip Clip;
 
-        [Range(0f, 1f)]
-        public float Volume = 1f;
+        [Range(0f, 5f)]
+        public float Volume = 5f;
 
         [HideInInspector]
         public AudioSource Source;
