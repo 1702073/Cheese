@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 572874958724398351}
   - component: {fileID: 1618237199313889203}
   - component: {fileID: 3705919844770865338}
+  - component: {fileID: 6852356859392608660}
   - component: {fileID: 6077666629796968856}
   m_Layer: 3
   m_Name: NPC
@@ -295,6 +296,25 @@ MonoBehaviour:
   maxPosition: {x: 60, y: 35}
   npcGFX: {fileID: 5791745556789988744}
   pauseDuration: 2
+--- !u!114 &6852356859392608660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151584149033488959}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26771aded515d044e9acd5d9cbc82379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {x: 0, y: 0}
+  speed: 200
+  nextWaypointDistance: 3
+  minPosition: {x: 0, y: 0}
+  maxPosition: {x: 0, y: 0}
+  npcGFX: {fileID: 0}
+  pauseDuration: 0
 --- !u!114 &6077666629796968856
 MonoBehaviour:
   m_ObjectHideFlags: 0

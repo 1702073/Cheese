@@ -2,17 +2,14 @@ using UnityEngine;
 
 public class NPC_State : MonoBehaviour
 {
+    NpcAI npcAI;
+
     public string[] race = { "Alien", "human" };
-    public string[] actionToPreform = { "Sabatoge", "human" };
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public string[] actionToPreform = { "Sabatoge", "infect", "Wander"};
+
+    private void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

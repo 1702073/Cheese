@@ -2,7 +2,7 @@ using UnityEngine;
 using Pathfinding;
 using System.Collections;
 
-public class NpcMovement : MonoBehaviour
+public class NpcAI : MonoBehaviour
 {
     public Vector2 target;
     public float speed = 200f, nextWaypointDistance = 3f;
@@ -101,4 +101,5 @@ public class NpcMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(new Vector3((minPosition.x + maxPosition.x) / 2, (minPosition.y + maxPosition.y) / 2, 0), new Vector3(maxPosition.x - minPosition.x, maxPosition.y - minPosition.y, 0));
     }
+
 }
