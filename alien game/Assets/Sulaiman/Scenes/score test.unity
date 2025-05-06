@@ -8830,6 +8830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 227320624}
   remainingTime: 10
+  LevelToLoad: 0
 --- !u!114 &1855987686
 MonoBehaviour:
   m_ObjectHideFlags: 0

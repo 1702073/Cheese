@@ -6,6 +6,7 @@ public class timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
    [SerializeField] float remainingTime;
+    public int LevelToLoad;
 
     // Update is called once per frame
     void Update()
@@ -17,8 +18,7 @@ public class timer : MonoBehaviour
         else if (remainingTime <= 0)
         {
             remainingTime = 0;
-            Application.loadedLevel
-
+            SceneManager.LoadScene(LevelToLoad);
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
