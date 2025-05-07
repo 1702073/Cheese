@@ -11,7 +11,7 @@ public class AlienMovement : MonoBehaviour
 
     public Transform npcGFX;
 
-    int coolDown = 0;
+    //int coolDown = 0;
 
     Path path;
     int currentWaypoint = 0;

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class TestStuff : MonoBehaviour
 {
-    Vector2 Vector2 = (1, 1);
+    Vector2 Vector2;
     void Start()
     {
         Vector2 =  Mouse.current.position.ReadValue();
