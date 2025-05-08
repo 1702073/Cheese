@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5915120366043966457, guid: bbeb06e685d105a4ba468b8cd7a5cda4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30461,8 +30461,8 @@ MonoBehaviour:
   - You will never stop us QUINN!
   - I shall take over the ship and rule over the humans!
   portrait:
-  - {fileID: -1102858024, guid: 8cdb437a416a0aa4582b6afd35542abf, type: 3}
-  - {fileID: -1102858024, guid: 8cdb437a416a0aa4582b6afd35542abf, type: 3}
+  - {fileID: -5915120366043966457, guid: bbeb06e685d105a4ba468b8cd7a5cda4, type: 3}
+  - {fileID: -5915120366043966457, guid: bbeb06e685d105a4ba468b8cd7a5cda4, type: 3}
 --- !u!4 &1604611243
 Transform:
   m_ObjectHideFlags: 0
