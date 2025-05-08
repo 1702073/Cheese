@@ -70,6 +70,7 @@ public class AlienMovement : MonoBehaviour
         {
             reachedEndOfPath = false;
         }
+
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
         Vector2 force = (direction * speed * Time.deltaTime);
 
